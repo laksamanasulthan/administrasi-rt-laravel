@@ -1,18 +1,19 @@
 <?php
 
-use App\Http\Controllers\ContributionCategoryController;
-use App\Http\Controllers\ExpenditureController;
-use App\Http\Controllers\HouseController;
-use App\Http\Controllers\HousingResidentController;
-use App\Http\Controllers\HousingStatusController;
-use App\Http\Controllers\MarriageStatusController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ResidentContributionController;
-use App\Http\Controllers\ResidentController;
-use App\Http\Controllers\ResidentStatusController;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
+
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\House\HouseController;
+use App\Http\Controllers\General\ProfileController;
+use App\Http\Controllers\Resident\ResidentController;
+use App\Http\Controllers\Finance\ExpenditureController;
+use App\Http\Controllers\House\HousingStatusController;
+use App\Http\Controllers\House\HousingResidentController;
+use App\Http\Controllers\Resident\MarriageStatusController;
+use App\Http\Controllers\Resident\ResidentStatusController;
+use App\Http\Controllers\Finance\ContributionCategoryController;
+use App\Http\Controllers\Finance\ResidentContributionController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [

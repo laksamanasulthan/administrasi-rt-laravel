@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Resident;
 
-use App\Models\Expenditure;
-use App\Http\Requests\StoreExpenditureRequest;
-use App\Http\Requests\UpdateExpenditureRequest;
+use App\Models\ResidentStatus;
+use App\Http\Requests\StoreResidentStatusRequest;
+use App\Http\Requests\UpdateResidentStatusRequest;
+use App\Http\Controllers\Controller;
 
-class ExpenditureController extends Controller
+class ResidentStatusController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class ExpenditureController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreExpenditureRequest $request)
+    public function store(StoreResidentStatusRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class ExpenditureController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Expenditure $expenditure)
+    public function show(ResidentStatus $residentStatus)
     {
         //
     }
@@ -43,7 +44,7 @@ class ExpenditureController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Expenditure $expenditure)
+    public function edit(ResidentStatus $residentStatus)
     {
         //
     }
@@ -51,7 +52,7 @@ class ExpenditureController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateExpenditureRequest $request, Expenditure $expenditure)
+    public function update(UpdateResidentStatusRequest $request, ResidentStatus $residentStatus)
     {
         //
     }
@@ -59,7 +60,7 @@ class ExpenditureController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Expenditure $expenditure)
+    public function destroy(ResidentStatus $residentStatus)
     {
         //
     }

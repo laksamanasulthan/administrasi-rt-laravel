@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Finance;
 
 use App\Models\ContributionCategory;
 use App\Http\Requests\StoreContributionCategoryRequest;
 use App\Http\Requests\UpdateContributionCategoryRequest;
 use Inertia\Inertia;
+use App\Http\Controllers\Controller;
 
 class ContributionCategoryController extends Controller
 {

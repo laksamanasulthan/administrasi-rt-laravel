@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Finance;
 
-use App\Models\MarriageStatus;
-use App\Http\Requests\StoreMarriageStatusRequest;
-use App\Http\Requests\UpdateMarriageStatusRequest;
+use App\Models\Expenditure;
+use App\Http\Requests\StoreExpenditureRequest;
+use App\Http\Requests\UpdateExpenditureRequest;
+use App\Http\Controllers\Controller;
 
-class MarriageStatusController extends Controller
+class ExpenditureController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class MarriageStatusController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreMarriageStatusRequest $request)
+    public function store(StoreExpenditureRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class MarriageStatusController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(MarriageStatus $marriageStatus)
+    public function show(Expenditure $expenditure)
     {
         //
     }
@@ -43,7 +44,7 @@ class MarriageStatusController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(MarriageStatus $marriageStatus)
+    public function edit(Expenditure $expenditure)
     {
         //
     }
@@ -51,7 +52,7 @@ class MarriageStatusController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateMarriageStatusRequest $request, MarriageStatus $marriageStatus)
+    public function update(UpdateExpenditureRequest $request, Expenditure $expenditure)
     {
         //
     }
@@ -59,7 +60,7 @@ class MarriageStatusController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(MarriageStatus $marriageStatus)
+    public function destroy(Expenditure $expenditure)
     {
         //
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Resident;
 
 use App\Helper\Response;
 use App\Models\Resident;
@@ -8,6 +8,7 @@ use App\Http\Requests\StoreResidentRequest;
 use App\Http\Requests\UpdateResidentRequest;
 use App\Services\FileUploadServices;
 use Inertia\Inertia;
+use App\Http\Controllers\Controller;
 
 class ResidentController extends Controller
 {

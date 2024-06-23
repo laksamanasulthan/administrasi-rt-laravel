@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\House;
 
-use App\Models\HousingStatus;
-use App\Http\Requests\StoreHousingStatusRequest;
-use App\Http\Requests\UpdateHousingStatusRequest;
+use App\Models\House;
+use App\Http\Requests\StoreHouseRequest;
+use App\Http\Requests\UpdateHouseRequest;
+use App\Http\Controllers\Controller;
 
-class HousingStatusController extends Controller
+class HouseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class HousingStatusController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreHousingStatusRequest $request)
+    public function store(StoreHouseRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class HousingStatusController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(HousingStatus $housingStatus)
+    public function show(House $house)
     {
         //
     }
@@ -43,7 +44,7 @@ class HousingStatusController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(HousingStatus $housingStatus)
+    public function edit(House $house)
     {
         //
     }
@@ -51,7 +52,7 @@ class HousingStatusController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateHousingStatusRequest $request, HousingStatus $housingStatus)
+    public function update(UpdateHouseRequest $request, House $house)
     {
         //
     }
@@ -59,7 +60,7 @@ class HousingStatusController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(HousingStatus $housingStatus)
+    public function destroy(House $house)
     {
         //
     }

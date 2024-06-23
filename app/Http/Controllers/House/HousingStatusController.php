@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\House;
 
-use App\Models\ResidentStatus;
-use App\Http\Requests\StoreResidentStatusRequest;
-use App\Http\Requests\UpdateResidentStatusRequest;
+use App\Models\HousingStatus;
+use App\Http\Requests\StoreHousingStatusRequest;
+use App\Http\Requests\UpdateHousingStatusRequest;
+use App\Http\Controllers\Controller;
 
-class ResidentStatusController extends Controller
+class HousingStatusController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class ResidentStatusController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreResidentStatusRequest $request)
+    public function store(StoreHousingStatusRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class ResidentStatusController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(ResidentStatus $residentStatus)
+    public function show(HousingStatus $housingStatus)
     {
         //
     }
@@ -43,7 +44,7 @@ class ResidentStatusController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(ResidentStatus $residentStatus)
+    public function edit(HousingStatus $housingStatus)
     {
         //
     }
@@ -51,7 +52,7 @@ class ResidentStatusController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateResidentStatusRequest $request, ResidentStatus $residentStatus)
+    public function update(UpdateHousingStatusRequest $request, HousingStatus $housingStatus)
     {
         //
     }
@@ -59,7 +60,7 @@ class ResidentStatusController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ResidentStatus $residentStatus)
+    public function destroy(HousingStatus $housingStatus)
     {
         //
     }

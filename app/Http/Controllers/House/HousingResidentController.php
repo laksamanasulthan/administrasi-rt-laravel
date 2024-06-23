@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\House;
 
 use App\Models\HousingResident;
 use App\Http\Requests\StoreHousingResidentRequest;
 use App\Http\Requests\UpdateHousingResidentRequest;
+use App\Http\Controllers\Controller;
 
 class HousingResidentController extends Controller
 {

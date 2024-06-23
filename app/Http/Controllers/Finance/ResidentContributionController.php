@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Finance;
 
-use App\Models\House;
-use App\Http\Requests\StoreHouseRequest;
-use App\Http\Requests\UpdateHouseRequest;
+use App\Models\ResidentContribution;
+use App\Http\Requests\StoreResidentContributionRequest;
+use App\Http\Requests\UpdateResidentContributionRequest;
+use App\Http\Controllers\Controller;
 
-class HouseController extends Controller
+class ResidentContributionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class HouseController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreHouseRequest $request)
+    public function store(StoreResidentContributionRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class HouseController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(House $house)
+    public function show(ResidentContribution $residentContribution)
     {
         //
     }
@@ -43,7 +44,7 @@ class HouseController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(House $house)
+    public function edit(ResidentContribution $residentContribution)
     {
         //
     }
@@ -51,7 +52,7 @@ class HouseController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateHouseRequest $request, House $house)
+    public function update(UpdateResidentContributionRequest $request, ResidentContribution $residentContribution)
     {
         //
     }
@@ -59,7 +60,7 @@ class HouseController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(House $house)
+    public function destroy(ResidentContribution $residentContribution)
     {
         //
     }

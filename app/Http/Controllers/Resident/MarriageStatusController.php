@@ -1,12 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Resident;
 
-use App\Models\ResidentContribution;
-use App\Http\Requests\StoreResidentContributionRequest;
-use App\Http\Requests\UpdateResidentContributionRequest;
+use App\Models\MarriageStatus;
+use App\Http\Requests\StoreMarriageStatusRequest;
+use App\Http\Requests\UpdateMarriageStatusRequest;
+use App\Http\Controllers\Controller;
 
-class ResidentContributionController extends Controller
+
+class MarriageStatusController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +29,7 @@ class ResidentContributionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreResidentContributionRequest $request)
+    public function store(StoreMarriageStatusRequest $request)
     {
         //
     }
@@ -35,7 +37,7 @@ class ResidentContributionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(ResidentContribution $residentContribution)
+    public function show(MarriageStatus $marriageStatus)
     {
         //
     }
@@ -43,7 +45,7 @@ class ResidentContributionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(ResidentContribution $residentContribution)
+    public function edit(MarriageStatus $marriageStatus)
     {
         //
     }
@@ -51,7 +53,7 @@ class ResidentContributionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateResidentContributionRequest $request, ResidentContribution $residentContribution)
+    public function update(UpdateMarriageStatusRequest $request, MarriageStatus $marriageStatus)
     {
         //
     }
@@ -59,7 +61,7 @@ class ResidentContributionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ResidentContribution $residentContribution)
+    public function destroy(MarriageStatus $marriageStatus)
     {
         //
     }
