@@ -22,16 +22,6 @@ class ResidentController extends Controller
     public function index()
     {
         $getData = Resident::with('residentBelongsToResidentStatus', 'residentBelongsToMarriageStatus')->latest()->get();
-
-        return response()->json($getData);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -54,10 +44,9 @@ class ResidentController extends Controller
 
 
         if (!$store) {
-            return Response::generate(400);
         }
 
-        return Inertia::render();
+        // return redirect()->route();
     }
 
     /**

@@ -14,6 +14,8 @@ use App\Http\Controllers\Resident\MarriageStatusController;
 use App\Http\Controllers\Resident\ResidentStatusController;
 use App\Http\Controllers\Finance\ContributionCategoryController;
 use App\Http\Controllers\Finance\ResidentContributionController;
+use App\Http\Controllers\House\HouseSettingController;
+use App\Http\Controllers\Resident\ResidentSettingController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -38,6 +40,7 @@ Route::middleware('auth')->group(function () {
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'verified']], function () {
 
     Route::group(['prefix' => 'residents', 'as' => 'residents.'], function () {
+        Route::get('/settings', ResidentSettingController::class)->name('settings');
         Route::group(['prefix' => 'resident', 'as' => 'resident.', 'controller' => ResidentController::class], function () {
             Route::get('/', 'index')->name('index');
             Route::get('/{id}/show', 'show')->name('show');
@@ -46,15 +49,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'v
             Route::delete('/{id}/delete', 'destroy')->name('delete');
         });
         Route::group(['prefix' => 'marriage-status', 'as' => 'marriage_status.', 'controller' => MarriageStatusController::class], function () {
-            Route::get('/', 'index')->name('index');
-            Route::get('/{id}/show', 'show')->name('show');
             Route::post('/', 'store')->name('store');
             Route::put('/{id}/update', 'update')->name('update');
             Route::delete('/{id}/delete', 'destroy')->name('delete');
         });
         Route::group(['prefix' => 'resident-status', 'as' => 'resident_status.', 'controller' => ResidentStatusController::class], function () {
-            Route::get('/', 'index')->name('index');
-            Route::get('/{id}/show', 'show')->name('show');
             Route::post('/', 'store')->name('store');
             Route::put('/{id}/update', 'update')->name('update');
             Route::delete('/{id}/delete', 'destroy')->name('delete');
@@ -62,6 +61,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'v
     });
 
     Route::group(['prefix' => 'houses', 'as' => 'houses.'], function () {
+        Route::get('/settings', HouseSettingController::class)->name('settings');
         Route::group(['prefix' => 'house', 'as' => 'house.', 'controller' => HouseController::class], function () {
             Route::get('/', 'index')->name('index');
             Route::get('/{id}/show', 'show')->name('show');
@@ -70,16 +70,14 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'v
             Route::delete('/{id}/delete', 'destroy')->name('delete');
         });
         Route::group(['prefix' => 'housing-status', 'as' => 'housing_status.', 'controller' => HousingStatusController::class], function () {
-            Route::get('/', 'index')->name('index');
-            Route::get('/{id}/show', 'show')->name('show');
             Route::post('/', 'store')->name('store');
             Route::put('/{id}/update', 'update')->name('update');
             Route::delete('/{id}/delete', 'destroy')->name('delete');
         });
         Route::group(['prefix' => 'housing-resident', 'as' => 'housing_resident.', 'controller' => HousingResidentController::class], function () {
-            Route::get('/{id}/show', 'show')->name('show');
-            Route::get('/{id}/show-by-house-id', 'showByHouseId')->name('show_by_house_id');
-            Route::put('/{id}/update', 'updateStatus')->name('updateStatus');
+            Route::post('/', 'store')->name('store');
+            Route::put('/{id}/update', 'update')->name('update');
+            Route::delete('/{id}/delete', 'destroy')->name('delete');
         });
     });
 

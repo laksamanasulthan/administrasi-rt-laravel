@@ -9,21 +9,6 @@ use App\Http\Controllers\Controller;
 
 class ResidentStatusController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -34,25 +19,9 @@ class ResidentStatusController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(ResidentStatus $residentStatus)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(ResidentStatus $residentStatus)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateResidentStatusRequest $request, ResidentStatus $residentStatus)
+    public function update(UpdateResidentStatusRequest $request, ResidentStatus $id)
     {
         //
     }
@@ -60,7 +29,7 @@ class ResidentStatusController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ResidentStatus $residentStatus)
+    public function destroy(ResidentStatus $id)
     {
         //
     }

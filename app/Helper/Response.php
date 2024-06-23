@@ -19,7 +19,13 @@ class Response
                     'message' => 'Not Found' ?? $message,
                 ])->setStatusCode(404);
                 break;
-
+            case  200:
+                return response()->json([
+                    'status_code' => 200,
+                    'data' => $data,
+                    'message' => 'OK' ?? $message
+                ])->setStatusCode(200);
+                break;
             default:
                 return response()->json([
                     'status_code' => '500',
