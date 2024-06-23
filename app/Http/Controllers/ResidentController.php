@@ -2,18 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Helper\Response;
 use App\Models\Resident;
 use App\Http\Requests\StoreResidentRequest;
 use App\Http\Requests\UpdateResidentRequest;
+use App\Services\FileUploadServices;
+use Inertia\Inertia;
 
 class ResidentController extends Controller
 {
+
+    public function __construct(private FileUploadServices $service)
+    {
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $getData = Resident::with('residentBelongsToResidentStatus', 'residentBelongsToMarriageStatus')->latest()->get();
+
+        return response()->json($getData);
     }
 
     /**
@@ -29,7 +38,25 @@ class ResidentController extends Controller
      */
     public function store(StoreResidentRequest $request)
     {
-        //
+        $body = $request->validated();
+
+        if ($request->hasFile('id_card')) {
+            $idCard = $this->service->upload($request->file('id_card'));
+        }
+
+        $store = Resident::create([
+            'resident_status_id' => $body['resident_status_id'],
+            'marriage_status_id' => $body['marriage_status_id'],
+            'full_name' => $body['full_name'],
+            'id_card' => $idCard
+        ]);
+
+
+        if (!$store) {
+            return Response::generate(400);
+        }
+
+        return Inertia::render();
     }
 
     /**

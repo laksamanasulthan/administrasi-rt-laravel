@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Carbon\Carbon;
+use App\Models\MarriageStatus;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class MarriageStatusSeeder extends Seeder
 {
@@ -12,6 +14,21 @@ class MarriageStatusSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $currentDateTime = Carbon::now();
+
+        $data = [
+            [
+                'status' => 'menikah',
+                'created_at' => $currentDateTime,
+                'updated_at' => $currentDateTime,
+            ],
+            [
+                'status' => 'belum menikah',
+                'created_at' => $currentDateTime,
+                'updated_at' => $currentDateTime,
+            ]
+        ];
+
+        MarriageStatus::insert($data);
     }
 }

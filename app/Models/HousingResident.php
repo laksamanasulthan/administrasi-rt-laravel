@@ -13,7 +13,10 @@ class HousingResident extends Model
         'house_id',
         'resident_id',
         'activity_status',
-        'payment_status',
+        'payment',
+        'end_date',
+        'start_date',
+        'description',
         'created_at',
         'updated_at',
     ];

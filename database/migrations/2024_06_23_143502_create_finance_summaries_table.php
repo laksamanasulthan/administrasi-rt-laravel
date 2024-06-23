@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('resident_statuses', function (Blueprint $table) {
+        Schema::create('finance_summaries', function (Blueprint $table) {
             $table->id();
-            $table->string('status');
+            $table->decimal('total_balance', 15, 2);
+            $table->decimal('total_expenditure', 15, 2);
+            $table->decimal('remaining_balance', 15, 2);
+            $table->date('month_and_year');
             $table->timestamps();
         });
     }
@@ -23,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('resident_statuses');
+        Schema::dropIfExists('finance_summaries');
     }
 };

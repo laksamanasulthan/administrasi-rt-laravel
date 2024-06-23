@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('houses', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('housing_status_id')->nullable()->constrained('housing_statuses')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->string('no');
+            $table->string('area');
+            $table->longText('address');
             $table->timestamps();
         });
     }

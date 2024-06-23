@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('housing_residents', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('resident_id')->nullable()->constrained('residents')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreignId('house_id')->nullable()->constrained('houses')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->boolean('activity_status');
+            $table->decimal('payment', 15, 2)->nullable();
+            $table->date('start_date');
+            $table->date('end_date')->nullable();
+            $table->longText('description');
             $table->timestamps();
         });
     }

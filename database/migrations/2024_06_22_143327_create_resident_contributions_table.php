@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('resident_contributions', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('resident_id')->nullable()->constrained('residents')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreignId('contribution_category_id')->nullable()->constrained('contribution_categories')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->decimal('nominal', 15, 2);
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }

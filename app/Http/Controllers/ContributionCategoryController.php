@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ContributionCategory;
 use App\Http\Requests\StoreContributionCategoryRequest;
 use App\Http\Requests\UpdateContributionCategoryRequest;
+use Inertia\Inertia;
 
 class ContributionCategoryController extends Controller
 {
@@ -13,7 +14,10 @@ class ContributionCategoryController extends Controller
      */
     public function index()
     {
-        //
+
+        $getAllData = ContributionCategory::latest()->get();
+
+        return Inertia::render('', ['listOfContributionCategory' => $getAllData]);
     }
 
     /**
@@ -35,7 +39,7 @@ class ContributionCategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(ContributionCategory $contributionCategory)
+    public function show(ContributionCategory $id)
     {
         //
     }
@@ -43,7 +47,7 @@ class ContributionCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(ContributionCategory $contributionCategory)
+    public function edit(ContributionCategory $id)
     {
         //
     }
@@ -51,7 +55,7 @@ class ContributionCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateContributionCategoryRequest $request, ContributionCategory $contributionCategory)
+    public function update(UpdateContributionCategoryRequest $request, ContributionCategory $id)
     {
         //
     }
@@ -59,7 +63,7 @@ class ContributionCategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ContributionCategory $contributionCategory)
+    public function destroy(ContributionCategory $id)
     {
         //
     }
