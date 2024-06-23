@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContributionCategoryController;
 use App\Http\Controllers\ExpenditureController;
 use App\Http\Controllers\HouseController;
 use App\Http\Controllers\HousingResidentController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\MarriageStatusController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ResidentContributionController;
 use App\Http\Controllers\ResidentController;
+use App\Http\Controllers\ResidentStatusController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -49,7 +51,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'v
             Route::put('/{id}/update', 'update')->name('update');
             Route::delete('/{id}/delete', 'destroy')->name('delete');
         });
-        Route::group(['prefix' => 'resident-status', 'as' => 'resident_status.', 'controller' => MarriageStatusController::class], function () {
+        Route::group(['prefix' => 'resident-status', 'as' => 'resident_status.', 'controller' => ResidentStatusController::class], function () {
             Route::get('/', 'index')->name('index');
             Route::get('/{id}/show', 'show')->name('show');
             Route::post('/', 'store')->name('store');
@@ -88,7 +90,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'v
             Route::put('/{id}/update', 'update')->name('update');
             Route::delete('/{id}/delete', 'destroy')->name('delete');
         });
-        Route::group(['prefix' => 'contribution-category', 'as' => 'resident_category.', 'controller' => ResidentContributionController::class], function () {
+        Route::group(['prefix' => 'contribution-category', 'as' => 'contribution_category.', 'controller' => ContributionCategoryController::class], function () {
             Route::get('/', 'index')->name('index');
             Route::get('/{id}/show', 'show')->name('show');
             Route::post('/', 'store')->name('store');
