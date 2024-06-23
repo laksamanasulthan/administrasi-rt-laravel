@@ -8,4 +8,23 @@ use Illuminate\Database\Eloquent\Model;
 class HousingResident extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'house_id',
+        'resident_id',
+        'activity_status',
+        'payment_status',
+        'created_at',
+        'updated_at',
+    ];
+
+    public function housingResidentBelongsToHouse()
+    {
+        return $this->belongsTo(House::class, 'house_id');
+    }
+
+    public function housingResidentBelongsToResident()
+    {
+        return $this->belongsTo(Resident::class, 'resident_id');
+    }
 }

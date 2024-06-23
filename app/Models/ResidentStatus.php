@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class ResidentStatus extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'created_at',
+        'updated_at',
+    ];
 }

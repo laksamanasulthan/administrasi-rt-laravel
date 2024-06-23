@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Balance extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'current_balance',
+        'created_at',
+        'updated_at',
+    ];
 }
