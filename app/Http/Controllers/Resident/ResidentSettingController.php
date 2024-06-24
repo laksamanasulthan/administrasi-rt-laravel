@@ -15,7 +15,7 @@ class ResidentSettingController extends Controller
         $listOfResidentStatus = ResidentStatus::latest()->get();
         $listOfMarriageStatus = MarriageStatus::latest()->get();
 
-        return Inertia::render('', [
+        return Inertia::render('Residents/ResidentSettings', [
             'residentStat' => $listOfResidentStatus,
             'marriageStat' => $listOfMarriageStatus
         ]);

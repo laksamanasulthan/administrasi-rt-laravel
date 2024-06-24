@@ -21,7 +21,9 @@ class ResidentController extends Controller
      */
     public function index()
     {
-        $getData = Resident::with('residentBelongsToResidentStatus', 'residentBelongsToMarriageStatus')->latest()->get();
+        // $getData = Resident::with('residentBelongsToResidentStatus', 'residentBelongsToMarriageStatus')->latest()->get();
+
+        return Inertia::render('Residents/ResidentIndex');
     }
 
     /**

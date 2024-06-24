@@ -36,7 +36,7 @@ export default function DashboardSide () {
                 </NavLink>
 
                 <NavLink
-                href="/profile"
+                href={route('profile.index')}
                 className="flex items-center py-2.5 px-4 rounded-lg transition duration-200 hover:bg-indigo-600 hover:bg-opacity-75"
                 >
                 <svg
@@ -57,8 +57,8 @@ export default function DashboardSide () {
                 </NavLink>
                 
                 <NavLink
-                href="/profile"
-                className="flex items-center py-2.5 px-4 rounded-lg transition duration-200 hover:bg-indigo-600 hover:bg-opacity-75"
+                    href={route('admin.houses.house.index')} active={route().current('admin.houses.house.index')}
+                    className="flex items-center py-2.5 px-4 rounded-lg transition duration-200 hover:bg-indigo-600 hover:bg-opacity-75"
                 >
                 <svg
                     className="h-6 w-6 mr-3"
@@ -78,7 +78,7 @@ export default function DashboardSide () {
                 </NavLink>
 
                 <NavLink
-                href="/profile"
+                href={route('admin.residents.resident.index')} active={route().current('admin.residents.resident.index')}
                 className="flex items-center py-2.5 px-4 rounded-lg transition duration-200 hover:bg-indigo-600 hover:bg-opacity-75"
                 >
                 <svg
@@ -98,9 +98,9 @@ export default function DashboardSide () {
                 Residents
                 </NavLink>
 
-                <NavLink
-                href="/profile"
-                className="flex items-center py-2.5 px-4 rounded-lg transition duration-200 hover:bg-indigo-600 hover:bg-opacity-75"
+                <NavLink 
+                    href={route('admin.finances.resident_contribution.index')} active={route().current('admin.finances.resident_contribution.index')}
+                    className="flex items-center py-2.5 px-4 rounded-lg transition duration-200 hover:bg-indigo-600 hover:bg-opacity-75"
                 >
                 <svg
                     className="h-6 w-6 mr-3"

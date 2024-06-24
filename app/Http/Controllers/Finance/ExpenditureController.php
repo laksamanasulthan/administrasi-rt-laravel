@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Finance;
 
+use Inertia\Inertia;
 use App\Models\Expenditure;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreExpenditureRequest;
 use App\Http\Requests\UpdateExpenditureRequest;
-use App\Http\Controllers\Controller;
 
 class ExpenditureController extends Controller
 {
@@ -14,7 +15,7 @@ class ExpenditureController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Finances/FinanceExpenditure');
     }
 
     /**

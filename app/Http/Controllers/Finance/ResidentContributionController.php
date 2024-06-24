@@ -6,6 +6,7 @@ use App\Models\ResidentContribution;
 use App\Http\Requests\StoreResidentContributionRequest;
 use App\Http\Requests\UpdateResidentContributionRequest;
 use App\Http\Controllers\Controller;
+use Inertia\Inertia;
 
 class ResidentContributionController extends Controller
 {
@@ -14,7 +15,7 @@ class ResidentContributionController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Finances/FinanceContribution');
     }
 
     /**
