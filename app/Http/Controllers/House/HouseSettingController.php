@@ -13,7 +13,7 @@ class HouseSettingController extends Controller
     {
         $housingStatus = HousingStatus::latest()->get();
 
-        return Inertia::render('', [
+        return Inertia::render('Houses/HouseSettings', [
             'housingStatus' => $housingStatus
         ]);
     }
